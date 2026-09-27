@@ -1,0 +1,309 @@
+!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Formação Inicial de Milton Santos</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef2f7;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 35px;
+            color: #172554;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #1e3a8a;
+            margin-top: 35px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .controles {
+            position: sticky;
+            bottom: 15px;
+            background: white;
+            padding: 15px 0 0;
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 14px 22px;
+            margin: 5px;
+            font-size: 17px;
+            cursor: pointer;
+            color: white;
+        }
+
+        #ouvir {
+            background: #2563eb;
+        }
+
+        #parar {
+            background: #64748b;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #status {
+            margin-top: 10px;
+            color: #475569;
+            font-size: 15px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 22px;
+                margin: 10px auto;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>A Formação Inicial de Milton Santos</h1>
+
+    <h2>Infância e os primeiros contatos com a Geografia</h2>
+
+    <p>
+        Milton de Almeida Santos nasceu em 3 de maio de 1926, na cidade de
+        Brotas de Macaúbas, no interior do estado da Bahia, filho de
+        professores primários. Quando tinha dez anos, foi enviado para estudar
+        como interno no Instituto Baiano de Ensino, em Salvador, onde
+        permaneceu por cerca de uma década.
+    </p>
+
+    <p>
+        Foi nesse colégio que a Geografia entrou na sua vida. O professor
+        Oswaldo Imbassahy apresentou-lhe a obra de Josué de Castro, que
+        discutia questões centrais do pensamento geográfico, como o
+        possibilismo e o determinismo. Também foi nesse colégio onde Milton
+        leu "Geografia da Fome", livro esse que tratava a fome como um
+        fenômeno político e econômico ao invés de uma fatalidade natural.
+        Essa perspectiva sobre a fome marcou profundamente seu interesse
+        pelos problemas enfrentados pelo Terceiro Mundo.
+    </p>
+
+    <h2>Formação em Direito e a persistência em ser geógrafo</h2>
+
+    <p>
+        Em 1944, Milton Santos ingressou no curso de Direito da Universidade
+        Federal da Bahia, concluindo o bacharelado em 1948. Mas mesmo assim
+        ele não abandonou a Geografia. Ele fez o curso de Direito porque não
+        existia curso superior de Geografia na Bahia. E esse curso de Direito
+        o fez ter contato com o discurso da elite baiana e a cultura
+        conservadora, o que acabou contribuindo para sua bagagem intelectual.
+    </p>
+
+    <p>
+        Mesmo depois de se formar em Direito, Milton permaneceu dando aula
+        de Geografia e começou a comparecer a reuniões da Associação dos
+        Geógrafos Brasileiros, AGB.
+    </p>
+
+    <p>
+        Em 1958, depois de conhecer o geógrafo Jean Tricart, ele foi
+        convidado para fazer o doutorado em Geografia na Universidade de
+        Estrasburgo, que fica na França. Lá, Milton defendeu a tese
+        "O Centro da Cidade do Salvador", que incorporava as relações sociais
+        à análise do espaço urbano, em vez de descrever somente suas formas
+        físicas.
+    </p>
+
+    <div class="controles">
+
+        <button id="ouvir" onclick="ouvirTexto()">
+            🔊 Ouvir texto
+        </button>
+
+        <button id="parar" onclick="pararLeitura()">
+            ⏹ Parar
+        </button>
+
+        <div id="status">
+            Clique em "Ouvir texto" para iniciar a leitura.
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    // Texto completo que será recitado
+    const texto = `
+A Formação Inicial de Milton Santos.
+
+Infância e os primeiros contatos com a Geografia.
+
+Milton de Almeida Santos nasceu em 3 de maio de 1926, na cidade de
+Brotas de Macaúbas, no interior do estado da Bahia, filho de professores
+primários. Quando tinha dez anos, foi enviado para estudar como interno
+no Instituto Baiano de Ensino, em Salvador, onde permaneceu por cerca
+de uma década.
+
+Foi nesse colégio que a Geografia entrou na sua vida. O professor
+Oswaldo Imbassahy apresentou-lhe a obra de Josué de Castro, que
+discutia questões centrais do pensamento geográfico, como o
+possibilismo e o determinismo. Também foi nesse colégio onde Milton
+leu "Geografia da Fome", livro esse que tratava a fome como um
+fenômeno político e econômico ao invés de uma fatalidade natural.
+Essa perspectiva sobre a fome marcou profundamente seu interesse
+pelos problemas enfrentados pelo Terceiro Mundo.
+
+Formação em Direito e a persistência em ser geógrafo.
+
+Em 1944, Milton Santos ingressou no curso de Direito da Universidade
+Federal da Bahia, concluindo o bacharelado em 1948. Mas mesmo assim
+ele não abandonou a Geografia. Ele fez o curso de Direito porque não
+existia curso superior de Geografia na Bahia. E esse curso de Direito
+o fez ter contato com o discurso da elite baiana e a cultura
+conservadora, o que acabou contribuindo para sua bagagem intelectual.
+
+Mesmo depois de se formar em Direito, Milton permaneceu dando aula
+de Geografia e começou a comparecer a reuniões da Associação dos
+Geógrafos Brasileiros, AGB.
+
+Em 1958, depois de conhecer o geógrafo Jean Tricart, ele foi convidado
+para fazer o doutorado em Geografia na Universidade de Estrasburgo,
+que fica na França. Lá, Milton defendeu a tese "O Centro da Cidade
+do Salvador", que incorporava as relações sociais à análise do espaço
+urbano, em vez de descrever somente suas formas físicas.
+`;
+
+    function escolherVoz(fala) {
+
+        const vozes = speechSynthesis.getVoices();
+
+        // Procura primeiro uma voz brasileira
+        let voz = vozes.find(
+            v => v.lang && v.lang.toLowerCase() === "pt-br"
+        );
+
+        // Se não encontrar, procura qualquer voz portuguesa
+        if (!voz) {
+            voz = vozes.find(
+                v => v.lang && v.lang.toLowerCase().startsWith("pt")
+            );
+        }
+
+        if (voz) {
+            fala.voice = voz;
+        }
+    }
+
+    function ouvirTexto() {
+
+        if (!("speechSynthesis" in window)) {
+            document.getElementById("status").textContent =
+                "Seu navegador não possui suporte à leitura de voz.";
+            return;
+        }
+
+        // Para qualquer leitura anterior
+        speechSynthesis.cancel();
+
+        const fala = new SpeechSynthesisUtterance(texto);
+
+        fala.lang = "pt-BR";
+
+        // Velocidade da leitura
+        fala.rate = 0.88;
+
+        // Tom da voz
+        fala.pitch = 1;
+
+        escolherVoz(fala);
+
+        fala.onstart = function () {
+            document.getElementById("status").textContent =
+                "🔊 Lendo o texto...";
+        };
+
+        fala.onend = function () {
+            document.getElementById("status").textContent =
+                "✅ Leitura concluída.";
+        };
+
+        fala.onerror = function () {
+            document.getElementById("status").textContent =
+                "Não foi possível iniciar a leitura.";
+        };
+
+        speechSynthesis.speak(fala);
+    }
+
+    function pararLeitura() {
+
+        speechSynthesis.cancel();
+
+        document.getElementById("status").textContent =
+            "⏹ Leitura interrompida.";
+    }
+
+    // Alguns navegadores carregam as vozes depois que a página abre
+    speechSynthesis.onvoiceschanged = function () {
+        speechSynthesis.getVoices();
+    };
+
+</script>
+
+</body>
+</html>
